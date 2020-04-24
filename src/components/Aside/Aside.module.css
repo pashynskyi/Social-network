@@ -1,0 +1,27 @@
+.aside {
+    grid-area: aside;
+    background-color: burlywood;
+}
+ 
+.menu li {
+    list-style-type: none;
+    padding-bottom: 5px;
+}
+
+li:last-child {
+    padding-top: 30px;
+}
+
+.item a {
+    color: white;
+    text-decoration: none;
+}
+
+.item .activeLink {
+    color: gray;
+    text-decoration: underline;
+}
+
+.item a:hover {
+    color: gold;
+}
