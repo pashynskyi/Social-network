@@ -1,7 +1,16 @@
 .dialog {
     padding: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .dialog .activeLink {
     color: yellow;
+}
+
+.dialog img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
 }

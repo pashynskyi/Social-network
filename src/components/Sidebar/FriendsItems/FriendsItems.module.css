@@ -1,0 +1,14 @@
+.items {
+    display: flex;
+    margin-top: 10px;
+}
+
+.items img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.item span {
+    font-size: 15px;
+}

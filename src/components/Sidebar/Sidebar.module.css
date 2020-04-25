@@ -25,3 +25,10 @@ li:last-child {
 .item a:hover {
     color: gold;
 }
+
+.item.friends {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    background: red;
+}
