@@ -16,8 +16,7 @@ const ProfileInfo = (props) => {
           <img
             className={s.profilePhoto}
             src="https://assets.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg"
-            alt=""
-          />
+            alt="" />
         </div>
         ava + description
       </div>
