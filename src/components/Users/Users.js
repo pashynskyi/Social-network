@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './users.module.css';
 import userPhoto from '../../assets/images/user_photo.png';
 import { NavLink } from 'react-router-dom';
+import * as axios from 'axios';
+import { usersAPI } from '../../api/api';
 
 const Users = (props) => {
 
@@ -11,7 +13,6 @@ const Users = (props) => {
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
   }
-
   return (
     <div>
       <div>
@@ -31,8 +32,14 @@ const Users = (props) => {
             </div>
             <div>
               {u.followed
-                ? <button onClick={() => { props.unfollow(u.id) }}>Unfollow</button>
-                : <button onClick={() => { props.follow(u.id) }}>Follow</button>}
+                ? <button disabled={props.followingInProgress
+                  .some(id => id === u.id)}
+                  onClick={() => { props.unfollow(u.id) }}>
+                  Unfollow</button>
+                : <button disabled={props.followingInProgress
+                  .some(id => id === u.id)}
+                  onClick={() => { props.follow(u.id) }}>
+                  Follow</button>}
             </div>
           </span>
           <span>

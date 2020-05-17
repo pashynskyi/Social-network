@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './ProfileInfo.module.css';
 import Preloader from '../../common/Preloader/Preloader';
 import userPhoto from '../../../assets/images/user_photo.png';
+import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -10,13 +11,13 @@ const ProfileInfo = (props) => {
 
   return (
     <div>
-      <div>
+      {/* <div>
         <img
           className={styles.titlePhoto}
           src="https://publicaffairs.vpcomm.umich.edu/wp-content/uploads/sites/19/mc-image-cache/2015/01/pa-home.jpg"
           alt=""
         />
-      </div>
+      </div> */}
       <div className={styles.descriptionBlock}>
         <div>
           <img
@@ -24,6 +25,7 @@ const ProfileInfo = (props) => {
             src={props.profile.photos.large ? props.profile.photos.large : userPhoto}
             alt="" />
         </div>
+        <ProfileStatus status={"Hello world!"} />
         {props.profile.fullName}
         <div>
         </div>
