@@ -9,21 +9,21 @@ const ProfileInfo = (props) => {
     return <Preloader />
   }
 
+  const onMainPhotoSelected = (e) => {
+    if (e.target.files.length) {
+      props.savePhoto(e.target.files[0]);
+    }
+  }
+
   return (
     <div>
-      {/* <div>
-        <img
-          className={styles.titlePhoto}
-          src="https://publicaffairs.vpcomm.umich.edu/wp-content/uploads/sites/19/mc-image-cache/2015/01/pa-home.jpg"
-          alt=""
-        />
-      </div> */}
       <div className={styles.descriptionBlock}>
         <div>
           <img
             className={styles.profilePhoto}
             src={props.profile.photos.large ? props.profile.photos.large : userPhoto}
             alt="" />
+            {props.isOwner && <input type={"file"} onChange={onMainPhotoSelected} />}
         </div>
         <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
         {props.profile.fullName}
